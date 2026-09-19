@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quiz App</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==================== LOGIN PAGE ==================== -->
+    <section id="login-page" class="page active">
+
+        <div class="login-card">
+
+            <div class="logo">
+                <span>Q</span>
+            </div>
+
+            <h1>Welcome to Quiz App</h1>
+
+            <p class="subtitle">
+                Test your knowledge and improve your skills
+            </p>
+
+            <form id="login-form">
+
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+
+                    <label for="password">Password</label>
+
+                    <div class="password-box">
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="toggle-password"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <p id="login-error" class="error-message"></p>
+
+                <button type="submit" class="primary-btn">
+                    Login
+                </button>
+
+            </form>
+
+            <p class="demo-text">
+                Demo login: use any valid email and password
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================== DASHBOARD PAGE ==================== -->
+    <section id="dashboard-page" class="page">
+
+        <header class="top-header">
+
+            <div class="brand">
+
+                <div class="small-logo">
+                    Q
+                </div>
+
+                <span>Quiz App</span>
+
+            </div>
+
+            <div class="header-actions">
+
+                <button
+                    id="theme-toggle"
+                    class="theme-btn"
+                    type="button"
+                    title="Toggle dark mode"
+                >
+                    🌙
+                </button>
+
+                <button
+                    id="logout-btn"
+                    class="logout-btn"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <main class="dashboard">
+
+            <!-- WELCOME -->
+            <div class="welcome-section">
+
+                <div>
+
+                    <p class="small-heading">
+                        DASHBOARD
+                    </p>
+
+                    <h1>
+                        Welcome,
+                        <span id="user-name">User</span>!
+                    </h1>
+
+                    <p>
+                        Ready to test your knowledge?
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUIZ INTRO -->
+            <div class="quiz-intro">
+
+                <div class="quiz-icon">
+                    ?
+                </div>
+
+                <div>
+
+                    <h2>
+                        Web Development Quiz
+                    </h2>
+
+                    <p>
+                        Test your knowledge of HTML, CSS and JavaScript.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- INFO GRID -->
+            <div class="info-grid">
+
+                <div class="info-card">
+
+                    <span
+                        class="info-number"
+                        id="question-count"
+                    >
+                        10
+                    </span>
+
+                    <span>
+                        Questions
+                    </span>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <span
+                        class="info-number"
+                        id="quiz-time"
+                    >
+                        10
+                    </span>
+
+                    <span>
+                        Minutes
+                    </span>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <span
+                        class="info-number"
+                        id="best-score"
+                    >
+                        0/10
+                    </span>
+
+                    <span>
+                        Best Score
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- INSTRUCTIONS -->
+            <div class="instructions">
+
+                <h3>
+                    Before you start
+                </h3>
+
+                <ul>
+
+                    <li>
+                        There are 10 multiple-choice questions.
+                    </li>
+
+                    <li>
+                        Questions and answers are randomized.
+                    </li>
+
+                    <li>
+                        Select one answer for each question.
+                    </li>
+
+                    <li>
+                        You cannot change your answer after selecting it.
+                    </li>
+
+                    <li>
+                        Your final score will be displayed at the end.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- LAST RESULT -->
+            <div
+                id="last-result"
+                class="last-result"
+            >
+
+                <div>
+
+                    <span class="last-result-title">
+                        Last Attempt
+                    </span>
+
+                    <span
+                        id="last-result-text"
+                        class="last-result-text"
+                    >
+                        No attempt yet
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="start-btn"
+                class="primary-btn start-btn"
+            >
+                Start Quiz
+            </button>
+
+        </main>
+
+    </section>
+
+
+    <!-- ==================== QUIZ PAGE ==================== -->
+    <section id="quiz-page" class="page">
+
+        <header class="top-header">
+
+            <div class="brand">
+
+                <div class="small-logo">
+                    Q
+                </div>
+
+                <span>
+                    Quiz App
+                </span>
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <button
+                    id="quiz-theme-toggle"
+                    class="theme-btn"
+                    type="button"
+                    title="Toggle dark mode"
+                >
+                    🌙
+                </button>
+
+                <div class="timer">
+
+                    <span>
+                        Time Left:
+                    </span>
+
+                    <strong id="timer">
+                        10:00
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <main class="quiz-main">
+
+            <!-- QUIZ TOP -->
+            <div class="quiz-top">
+
+                <span id="question-number">
+                    Question 1 of 10
+                </span>
+
+                <span id="question-score">
+                    Score: 0
+                </span>
+
+            </div>
+
+
+            <!-- PROGRESS -->
+            <div class="progress-container">
+
+                <div id="progress-bar"></div>
+
+            </div>
+
+
+            <!-- QUESTION CARD -->
+            <div
+                id="question-card"
+                class="question-card"
+            >
+
+                <h2 id="question">
+                    Question will appear here
+                </h2>
+
+                <div
+                    id="answer-buttons"
+                    class="answer-buttons"
+                >
+                </div>
+
+            </div>
+
+
+            <!-- NAVIGATION -->
+            <div class="quiz-navigation">
+
+                <button
+                    id="next-btn"
+                    class="primary-btn"
+                >
+                    Next
+                </button>
+
+            </div>
+
+        </main>
+
+    </section>
+
+
+    <!-- ==================== RESULT PAGE ==================== -->
+    <section id="result-page" class="page">
+
+        <div class="result-card">
+
+            <div class="result-icon">
+                ✓
+            </div>
+
+            <p class="small-heading">
+                QUIZ COMPLETED
+            </p>
+
+            <h1>
+                Great job!
+            </h1>
+
+            <p id="result-message">
+                You completed the quiz.
+            </p>
+
+
+            <!-- FINAL SCORE -->
+            <div class="final-score">
+
+                <span id="final-score">
+                    0
+                </span>
+
+                <small>
+                    / 10
+                </small>
+
+            </div>
+
+
+            <!-- RESULT STATS -->
+            <div class="result-stats">
+
+                <div>
+
+                    <strong id="correct-answers">
+                        0
+                    </strong>
+
+                    <span>
+                        Correct
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong id="wrong-answers">
+                        0
+                    </strong>
+
+                    <span>
+                        Wrong
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong id="percentage">
+                        0%
+                    </strong>
+
+                    <span>
+                        Percentage
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- EXTRA RESULT INFORMATION -->
+            <div class="extra-result-info">
+
+                <div>
+
+                    <span>
+                        Time Taken
+                    </span>
+
+                    <strong id="time-taken">
+                        00:00
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Best Score
+                    </span>
+
+                    <strong id="result-best-score">
+                        0/10
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- REVIEW -->
+            <div
+                id="review-section"
+                class="review-section"
+            >
+
+                <button
+                    id="review-btn"
+                    class="review-btn"
+                    type="button"
+                >
+                    Review Answers
+                </button>
+
+                <div
+                    id="review-container"
+                    class="review-container"
+                >
+                </div>
+
+            </div>
+
+
+            <!-- RESULT BUTTONS -->
+            <div class="result-buttons">
+
+                <button
+                    id="restart-btn"
+                    class="primary-btn"
+                >
+                    Restart Quiz
+                </button>
+
+                <button
+                    id="home-btn"
+                    class="secondary-btn"
+                >
+                    Dashboard
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
