@@ -1,0 +1,1221 @@
+/* ==================== RESET ==================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==================== VARIABLES ==================== */
+
+:root {
+    --primary: #667eea;
+    --primary-dark: #5568d8;
+
+    --background: #f4f6fb;
+    --card: #ffffff;
+
+    --text: #222222;
+    --muted: #777777;
+
+    --border: #e0e0e0;
+
+    --success: #28a745;
+    --success-bg: #d4edda;
+
+    --danger: #dc3545;
+    --danger-bg: #f8d7da;
+
+    --shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
+}
+
+
+/* ==================== DARK MODE ==================== */
+
+body.dark-mode {
+    --background: #111827;
+    --card: #1f2937;
+
+    --text: #f3f4f6;
+    --muted: #aeb6c3;
+
+    --border: #374151;
+
+    --shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ==================== BODY ==================== */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    min-height: 100vh;
+
+    background: var(--background);
+
+    color: var(--text);
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+
+/* ==================== PAGE ==================== */
+
+.page {
+    display: none;
+
+    min-height: 100vh;
+}
+
+.page.active {
+    display: flex;
+}
+
+
+/* ==================== LOGIN PAGE ==================== */
+
+#login-page {
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background: linear-gradient(
+        135deg,
+        #667eea,
+        #764ba2
+    );
+}
+
+
+/* ==================== LOGIN CARD ==================== */
+
+.login-card {
+    width: 100%;
+    max-width: 450px;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.2);
+
+    text-align: center;
+
+    animation: slideUp 0.5s ease;
+}
+
+
+.login-card h1 {
+    font-size: 28px;
+
+    margin-bottom: 10px;
+
+    color: #222;
+}
+
+
+.subtitle {
+    color: #777;
+
+    margin-bottom: 30px;
+
+    line-height: 1.5;
+}
+
+
+/* ==================== LOGO ==================== */
+
+.logo {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 18px;
+
+    background: #667eea;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: white;
+
+    font-size: 32px;
+
+    font-weight: bold;
+}
+
+
+/* ==================== INPUT ==================== */
+
+.input-group {
+    text-align: left;
+
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+    color: #222;
+}
+
+.input-group input {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #667eea;
+
+    box-shadow:
+        0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+
+/* ==================== PASSWORD ==================== */
+
+.password-box {
+    position: relative;
+}
+
+.password-box input {
+    padding-right: 65px;
+}
+
+#toggle-password {
+    position: absolute;
+
+    right: 10px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    background: transparent;
+
+    color: #667eea;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+
+/* ==================== BUTTONS ==================== */
+
+.primary-btn {
+    width: 100%;
+
+    padding: 14px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #667eea;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.primary-btn:hover {
+    background: #5568d8;
+
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    width: 100%;
+
+    padding: 14px 20px;
+
+    border: 2px solid #667eea;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: #667eea;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.secondary-btn:hover {
+    background: #f2f4ff;
+}
+
+
+/* ==================== ERROR ==================== */
+
+.error-message {
+    color: #dc3545;
+
+    font-size: 14px;
+
+    margin-bottom: 12px;
+}
+
+
+/* ==================== DEMO TEXT ==================== */
+
+.demo-text {
+    margin-top: 20px;
+
+    font-size: 12px;
+
+    color: #888;
+}
+
+
+/* ==================== HEADER ==================== */
+
+.top-header {
+    width: 100%;
+
+    min-height: 70px;
+
+    padding: 0 6%;
+
+    background: var(--card);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+.brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+
+.small-logo {
+    width: 38px;
+    height: 38px;
+
+    background: #667eea;
+
+    color: white;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: bold;
+}
+
+
+.header-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+/* ==================== THEME BUTTON ==================== */
+
+.theme-btn {
+    width: 40px;
+    height: 40px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    background: var(--card);
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    transition: 0.3s;
+}
+
+.theme-btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ==================== LOGOUT ==================== */
+
+.logout-btn {
+    padding: 9px 18px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 7px;
+
+    background: var(--card);
+
+    cursor: pointer;
+
+    color: var(--muted);
+
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    border-color: #667eea;
+
+    color: #667eea;
+}
+
+
+/* ==================== DASHBOARD ==================== */
+
+#dashboard-page {
+    flex-direction: column;
+}
+
+.dashboard {
+    width: 90%;
+
+    max-width: 900px;
+
+    margin: 50px auto;
+}
+
+
+/* ==================== WELCOME ==================== */
+
+.welcome-section {
+    margin-bottom: 30px;
+}
+
+.small-heading {
+    color: #667eea;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 8px;
+}
+
+.welcome-section h1 {
+    font-size: 34px;
+
+    margin-bottom: 8px;
+}
+
+.welcome-section h1 span {
+    color: #667eea;
+}
+
+.welcome-section p:last-child {
+    color: var(--muted);
+}
+
+
+/* ==================== QUIZ INTRO ==================== */
+
+.quiz-intro {
+    background: var(--card);
+
+    border-radius: 15px;
+
+    padding: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    box-shadow: var(--shadow);
+
+    margin-bottom: 20px;
+}
+
+
+.quiz-icon {
+    width: 65px;
+    height: 65px;
+
+    flex-shrink: 0;
+
+    background: #eef0ff;
+
+    color: #667eea;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 30px;
+
+    font-weight: bold;
+}
+
+.quiz-intro h2 {
+    margin-bottom: 8px;
+}
+
+.quiz-intro p {
+    color: var(--muted);
+}
+
+
+/* ==================== INFO GRID ==================== */
+
+.info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.info-card {
+    background: var(--card);
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    box-shadow: var(--shadow);
+}
+
+.info-card span {
+    display: block;
+}
+
+.info-number {
+    font-size: 25px;
+
+    font-weight: bold;
+
+    color: #667eea;
+
+    margin-bottom: 5px;
+}
+
+.info-card span:last-child {
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* ==================== INSTRUCTIONS ==================== */
+
+.instructions {
+    background: var(--card);
+
+    padding: 25px 30px;
+
+    border-radius: 12px;
+
+    margin-bottom: 20px;
+
+    box-shadow: var(--shadow);
+}
+
+.instructions h3 {
+    margin-bottom: 15px;
+}
+
+.instructions ul {
+    padding-left: 20px;
+
+    color: var(--muted);
+
+    line-height: 2;
+}
+
+
+.start-btn {
+    max-width: 250px;
+}
+
+
+/* ==================== LAST RESULT ==================== */
+
+.last-result {
+    background: var(--card);
+
+    border-left: 4px solid #667eea;
+
+    padding: 18px 20px;
+
+    border-radius: 10px;
+
+    margin-bottom: 20px;
+
+    box-shadow: var(--shadow);
+}
+
+.last-result-title {
+    display: block;
+
+    font-size: 12px;
+
+    color: #667eea;
+
+    font-weight: bold;
+
+    margin-bottom: 5px;
+
+    text-transform: uppercase;
+}
+
+.last-result-text {
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* ==================== QUIZ PAGE ==================== */
+
+#quiz-page {
+    flex-direction: column;
+}
+
+.timer {
+    background: #f2f4ff;
+
+    color: #667eea;
+
+    padding: 9px 15px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+}
+
+.timer.warning {
+    background: #fff3cd;
+
+    color: #856404;
+}
+
+.timer.danger {
+    background: #f8d7da;
+
+    color: #721c24;
+}
+
+.timer strong {
+    margin-left: 5px;
+}
+
+
+/* ==================== QUIZ MAIN ==================== */
+
+.quiz-main {
+    width: 90%;
+
+    max-width: 850px;
+
+    margin: 50px auto;
+}
+
+
+/* ==================== QUIZ TOP ==================== */
+
+.quiz-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 12px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+#question-score {
+    font-weight: bold;
+
+    color: #667eea;
+}
+
+
+/* ==================== PROGRESS ==================== */
+
+.progress-container {
+    width: 100%;
+
+    height: 8px;
+
+    background: #ddd;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    margin-bottom: 25px;
+}
+
+#progress-bar {
+    width: 10%;
+
+    height: 100%;
+
+    background: #667eea;
+
+    transition: width 0.4s ease;
+}
+
+
+/* ==================== QUESTION CARD ==================== */
+
+.question-card {
+    background: var(--card);
+
+    border-radius: 15px;
+
+    padding: 35px;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+.question-card.question-changing {
+    opacity: 0;
+
+    transform: translateX(20px);
+}
+
+.question-card h2 {
+    font-size: 23px;
+
+    line-height: 1.5;
+
+    margin-bottom: 25px;
+}
+
+
+/* ==================== ANSWERS ==================== */
+
+.answer-buttons {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.answer-btn {
+    width: 100%;
+
+    padding: 15px;
+
+    background: transparent;
+
+    border: 2px solid var(--border);
+
+    border-radius: 9px;
+
+    text-align: left;
+
+    font-size: 15px;
+
+    color: var(--text);
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.answer-btn:hover:not(:disabled) {
+    border-color: #667eea;
+
+    background: #f7f8ff;
+
+    transform: translateX(4px);
+}
+
+body.dark-mode .answer-btn:hover:not(:disabled) {
+    background: #273449;
+}
+
+.answer-btn.correct {
+    background: #d4edda;
+
+    border-color: #28a745;
+
+    color: #155724;
+}
+
+.answer-btn.wrong {
+    background: #f8d7da;
+
+    border-color: #dc3545;
+
+    color: #721c24;
+}
+
+.answer-btn:disabled {
+    cursor: not-allowed;
+}
+
+
+/* ==================== NAVIGATION ==================== */
+
+.quiz-navigation {
+    margin-top: 20px;
+
+    display: flex;
+
+    justify-content: flex-end;
+}
+
+.quiz-navigation .primary-btn {
+    width: auto;
+
+    min-width: 130px;
+}
+
+
+/* ==================== RESULT ==================== */
+
+#result-page {
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    background: var(--background);
+}
+
+.result-card {
+    width: 100%;
+
+    max-width: 650px;
+
+    background: var(--card);
+
+    padding: 45px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow: var(--shadow);
+
+    animation: slideUp 0.5s ease;
+}
+
+.result-icon {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: #d4edda;
+
+    color: #28a745;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 35px;
+
+    font-weight: bold;
+}
+
+.result-card h1 {
+    font-size: 32px;
+
+    margin-bottom: 10px;
+}
+
+.result-card > p {
+    color: var(--muted);
+
+    margin-bottom: 20px;
+}
+
+
+/* ==================== FINAL SCORE ==================== */
+
+.final-score {
+    margin: 20px 0;
+
+    color: #667eea;
+}
+
+.final-score span {
+    font-size: 60px;
+
+    font-weight: bold;
+}
+
+.final-score small {
+    font-size: 25px;
+
+    color: #999;
+}
+
+
+/* ==================== RESULT STATS ==================== */
+
+.result-stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+    margin: 25px 0;
+}
+
+.result-stats div {
+    padding: 15px;
+
+    background: #f7f8ff;
+
+    border-radius: 10px;
+}
+
+.result-stats strong {
+    display: block;
+
+    font-size: 22px;
+
+    color: #667eea;
+
+    margin-bottom: 5px;
+}
+
+.result-stats span {
+    font-size: 12px;
+
+    color: #777;
+}
+
+
+/* ==================== EXTRA RESULT ==================== */
+
+.extra-result-info {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 10px;
+
+    margin-bottom: 25px;
+}
+
+.extra-result-info div {
+    padding: 15px;
+
+    background: var(--background);
+
+    border-radius: 10px;
+}
+
+.extra-result-info span {
+    display: block;
+
+    font-size: 12px;
+
+    color: var(--muted);
+
+    margin-bottom: 5px;
+}
+
+.extra-result-info strong {
+    color: #667eea;
+
+    font-size: 18px;
+}
+
+
+/* ==================== REVIEW ==================== */
+
+.review-section {
+    margin-top: 20px;
+
+    margin-bottom: 25px;
+}
+
+.review-btn {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #667eea;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: #667eea;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.review-btn:hover {
+    background: #f2f4ff;
+}
+
+.review-container {
+    display: none;
+
+    text-align: left;
+
+    margin-top: 15px;
+
+    max-height: 350px;
+
+    overflow-y: auto;
+}
+
+.review-container.show {
+    display: block;
+}
+
+.review-item {
+    padding: 15px;
+
+    margin-bottom: 10px;
+
+    background: var(--background);
+
+    border-radius: 10px;
+
+    border-left: 4px solid #667eea;
+}
+
+.review-question {
+    font-weight: bold;
+
+    margin-bottom: 10px;
+
+    line-height: 1.4;
+}
+
+.review-answer {
+    font-size: 14px;
+
+    margin-top: 5px;
+}
+
+.review-answer.correct-answer {
+    color: #198754;
+}
+
+.review-answer.user-wrong {
+    color: #dc3545;
+}
+
+
+/* ==================== RESULT BUTTONS ==================== */
+
+.result-buttons {
+    display: flex;
+
+    gap: 12px;
+}
+
+.result-buttons button {
+    flex: 1;
+}
+
+
+/* ==================== ANIMATION ==================== */
+
+@keyframes slideUp {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ==================== RESPONSIVE ==================== */
+
+@media (max-width: 600px) {
+
+    .login-card {
+        padding: 30px 22px;
+    }
+
+
+    .login-card h1 {
+        font-size: 24px;
+    }
+
+
+    .top-header {
+        padding: 0 20px;
+    }
+
+
+    .brand {
+        font-size: 17px;
+    }
+
+
+    .header-actions {
+        gap: 6px;
+    }
+
+
+    .dashboard {
+        margin: 30px auto;
+    }
+
+
+    .welcome-section h1 {
+        font-size: 27px;
+    }
+
+
+    .quiz-intro {
+        padding: 22px;
+    }
+
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .quiz-main {
+        margin: 30px auto;
+    }
+
+
+    .question-card {
+        padding: 25px 20px;
+    }
+
+
+    .question-card h2 {
+        font-size: 19px;
+    }
+
+
+    .result-card {
+        padding: 35px 20px;
+    }
+
+
+    .result-stats {
+        grid-template-columns: 1fr;
+    }
+
+
+    .extra-result-info {
+        grid-template-columns: 1fr;
+    }
+
+
+    .result-buttons {
+        flex-direction: column;
+    }
+
+
+    .timer span {
+        display: none;
+    }
+
+
+    .theme-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+}
